@@ -20,7 +20,9 @@ Instagram-Clone/
 │   └── ...
 │
 ├── insta-backend/      # Node.js + Express backend
-    └── ...
+│   └── ...
+│
+└── README.md
 ```
 
 ---
