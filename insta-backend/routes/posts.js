@@ -60,7 +60,9 @@ router.put('/like', requiredLogin, async (req, res) => {
                 $push: { likes: req.user._id }
             },
             { new: true }
-        );
+        )
+            .populate("postedBy", "_id name")
+            .populate("comments.postedBy", "_id name");
 
         res.json(result);
     } catch (err) {
@@ -68,6 +70,7 @@ router.put('/like', requiredLogin, async (req, res) => {
         res.status(422).json({ error: err.message });
     }
 });
+
 
 router.put('/unlike', requiredLogin, async (req, res) => {
     try {
@@ -77,7 +80,9 @@ router.put('/unlike', requiredLogin, async (req, res) => {
                 $pull: { likes: req.user._id }
             },
             { new: true }
-        );
+        )
+            .populate("postedBy", "_id name")
+            .populate("comments.postedBy", "_id name");
 
         res.json(result);
     } catch (err) {
@@ -85,6 +90,7 @@ router.put('/unlike', requiredLogin, async (req, res) => {
         res.status(422).json({ error: err.message });
     }
 });
+
 
 router.put('/comment', requiredLogin, async (req, res) => {
     const comment = {

@@ -3,7 +3,7 @@ console.log("🚀 App.js has loaded");
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT || 5050;
 const { MONGOURI, JWT_SECRET } = require('./config/keys')
 const path = require('path');
 const cors = require("cors");
@@ -12,8 +12,6 @@ app.use(cors({
     origin: process.env.CLIENT_URL || 'https://instaclone202.netlify.app',
     credentials: true
 }));
-
-
 
 
 mongoose.connect(MONGOURI);
