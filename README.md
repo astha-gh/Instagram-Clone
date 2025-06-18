@@ -13,6 +13,7 @@ A full-featured social media app inspired by Instagram, built with the MERN stac
 
 ## 📁 Project Structure
 
+```bash
 Instagram-Clone/
 │
 ├── client/             # React frontend
@@ -20,6 +21,7 @@ Instagram-Clone/
 │
 ├── insta-backend/      # Node.js + Express backend
     └── ...
+```
 
 ---
 
